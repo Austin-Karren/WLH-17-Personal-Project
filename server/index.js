@@ -3,6 +3,8 @@ const express = require('express'),
       massive = require('massive'),
       session = require('express-session'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
+      authCtrl = require('./controllers/authController'),
+      postCtrl = require('./controllers/postController'),
       port = SERVER_PORT,
       app = express();
 
@@ -26,4 +28,5 @@ massive({
    app.listen(port, () => console.log(`server running on port ${port}`));
 })
 
-//Endpoints
+// Auth Endpoints
+app.post('/auth/register-admin', authCtrl.registerAdmin);
