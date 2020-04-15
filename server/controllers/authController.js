@@ -19,7 +19,7 @@ module.exports = {
       req.session.user = newUser[0];
       res.status(200).send(req.session.user);
    },
-   registerAuthor: async(req, res) => {
+   createAuthor: async(req, res) => {
       const {email, password} = req.body;
       const db = req.app.get('db');
       let checkUser = await db.auth.check_email(email);
