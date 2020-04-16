@@ -30,7 +30,6 @@ massive({
 
 // Auth endpoints
 app.post('/auth/register-admin', authCtrl.registerAdmin);
-app.post('/auth/create-author', authCtrl.createAuthor);
 app.post('/auth/login', authCtrl.login);
 app.get('/auth/logout', authCtrl.logout);
 

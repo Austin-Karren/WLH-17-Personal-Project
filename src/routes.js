@@ -6,7 +6,7 @@ import Contact from './Components/Contact';
 import Portfolio from './Components/Portfolio';
 import Collection from './Components/Collection';
 import Album from './Components/Album';
-import Auth from './Components/Auth';
+import Auth from './Components/Login';
 
 export default(
    <Switch>
