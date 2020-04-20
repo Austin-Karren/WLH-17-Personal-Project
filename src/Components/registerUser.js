@@ -6,8 +6,7 @@ import axios from 'axios';
 const NewUser = props => {
    console.log(props);
    const [emailInput, setEmailInput] = useState(''),
-         [passInput, setPassInput] = useState(''),
-         [toggleAdmin, setToggleAdmin] = useState(false);
+         [passInput, setPassInput] = useState('');
 
    const registerAdmin = () => {
       axios.post('/auth/register-admin', {email: emailInput, password: passInput})
@@ -26,5 +25,4 @@ const NewUser = props => {
       </div>
    )
 }
-
 export default connect(null, {getUser})(NewUser);

@@ -6,7 +6,8 @@ import Contact from './Components/Contact';
 import Portfolio from './Components/Portfolio';
 import Collection from './Components/Collection';
 import Album from './Components/Album';
-import Auth from './Components/Login';
+import Login from './Components/AppLogin';
+import Edit from './Components/EditPortfolio';
 
 export default(
    <Switch>
@@ -16,6 +17,7 @@ export default(
       <Route path='/portfolio' component={Portfolio} />
       <Route path='/collection/:id' component={Collection} />
       <Route path='/album/:id' component={Album} />
-      <Route path='/auth' component={Auth} />
+      <Route path='/edit' component={Login} />
+      <Route path='/admin/:id' component={Edit} />
    </Switch>
 );
