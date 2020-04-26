@@ -1,5 +1,5 @@
-import {createMultiTheme} from '@material-ui/core/styles';
-import {green, gray, red} from '@material-ui/core/colors';
+import {createMultiTheme} from './node_modules/@material-ui/core/styles';
+import {green, gray, red} from './node_modules/@material-ui/core/colors';
 
 const rawTheme = createMultiTheme({
    palette: {

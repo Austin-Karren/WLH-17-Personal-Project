@@ -2,4 +2,4 @@ update collections
 set title = ${title},
     description = ${description},
     featured_photo = ${featured_photo}
-where collection_id = ${collection_id};
+where collection_id = ${id};

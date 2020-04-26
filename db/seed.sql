@@ -19,15 +19,23 @@ create table albums (
     album_id serial primary key,
     title varchar(100) not null,
     description varchar(100),
-    album_cover_photo text,
-    collection_id int references collections(collection_id),
-    author_id int references users(user_id) not null  
+    cover_photo text,
+    author_id int references users(user_id) not null
 );
 
 create table photos (
     photo_id serial primary key,
     title varchar(100),
     description varchar(150),
-    image text,
-    album_id int references albums(album_id) not null
+    image text
+);
+
+create table collection_junction (
+    album_id int references albums(album_id),
+    collection_id int references collections(collection_id)
+);
+
+create table album_photos (
+    album_id int references albums(album_id),
+    photo_id int references photos(photo_id)
 );

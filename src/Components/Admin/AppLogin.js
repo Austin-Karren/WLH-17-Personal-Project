@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import Login from './Views/Login';
-import '../App.css'
+import Auth from '../Views/Auth';
+import '../../App.css'
 
 const AppLogin = props => {
    return (
@@ -11,7 +11,7 @@ const AppLogin = props => {
                Login to edit portfolio
             </Typography>
          </header>
-         <Login />
+         <Auth />
       </React.Fragment>
    )
 }

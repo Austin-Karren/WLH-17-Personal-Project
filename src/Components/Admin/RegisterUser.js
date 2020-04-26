@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import {connect} from 'react-redux';
-import {getUser} from '../ducks/userReducer';
-import axios from 'axios';
+import React, {useState} from './node_modules/react';
+import {connect} from './node_modules/react-redux';
+import {getUser} from '../../ducks/userReducer';
+import axios from './node_modules/axios';
 
 const NewUser = props => {
    console.log(props);
