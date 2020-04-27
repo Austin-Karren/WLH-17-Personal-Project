@@ -48,14 +48,15 @@ const EditPhoto = props => {
       axios.put(`/api/photo/${props.match.params.id}`, {
         title, description, image
       })
-      .then(alert('Photo saved'))
+      .then(props.history.goBack())
       .catch(err => console.log(err));
    }
 
    const deletePhoto = () => {
       axios.delete(`/api/photo/${props.match.params.id}`)
-      .then(props.history.goBack)
+      .then(props.history.goBack())
       .catch(console.log('unable to delete Photo'));
+      // props.history.goBack();
    }
 
    return(

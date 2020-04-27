@@ -8,6 +8,7 @@ import Input from '@material-ui/core/Input';
 import {makeStyles} from '@material-ui/core/styles';
 import '../../App.css';
 import AlbumPhotoGrid from './AlbumPhotoGrid';
+import {withRouter} from 'react-router-dom';
 //Album
 const useStyles = makeStyles({
    root: {
@@ -50,7 +51,7 @@ const EditAlbum = props => {
         description, 
         cover_photo
       })
-      .then(alert('Album updated'))
+      .then(props.history.goBack())
       .catch((err) => {
          console.log(err);
          alert('Failed to update album')
@@ -134,9 +135,20 @@ const EditAlbum = props => {
                </Box>
             </Box>
          </Container>
-         <Button variant='contained' onClick={addAlbumToCollection}>
-            Add Album to Collection
-         </Button>
+         <Container
+            maxWidth='sm'
+            style={{
+               display: 'flex',
+               justifyContent: 'space-evenly',
+            }}
+         >
+            <Button variant='contained' onClick={addAlbumToCollection}>
+               Add Album to Collection
+            </Button>
+            <Button variant='contained' >
+               Add Photos
+            </Button>
+         </Container>
          <Typography 
             variant='h5'
             style={{
@@ -160,4 +172,4 @@ const EditAlbum = props => {
    );
 }
 
-export default EditAlbum;
+export default withRouter(EditAlbum);
