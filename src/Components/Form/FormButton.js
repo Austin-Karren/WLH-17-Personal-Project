@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import defer from './defer';
 import Button from '../Custom/Button';
+import withRoot from '../Theme/withRoot';
 
 function FormButton(props) {
   const { disabled, mounted, ...others } = props;
@@ -13,4 +14,4 @@ FormButton.propTypes = {
   mounted: PropTypes.bool,
 };
 
-export default defer(FormButton);
+export default withRoot(defer(FormButton));
