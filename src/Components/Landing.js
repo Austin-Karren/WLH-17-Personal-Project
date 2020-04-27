@@ -1,11 +1,21 @@
+import withRoot from './Theme/withRoot';
 import React, {useState, useEffect} from 'react';
+import AppNavbar from './Views/AppNavbar';
+import HeroHeader from './Views/HeroHeader';
+import AboutAuthor from './Views/AboutAuthor';
+import CollectionCategories from './Views/CollectionCategories';
+import AppFooter from './Views/AppFooter';
 
 const Landing = props => {
    return (
-      <div className='Landing'>
-         Landing Component
-      </div>
+      <React.Fragment>
+         <AppNavbar />
+         <HeroHeader />
+         <AboutAuthor />
+         <CollectionCategories />
+         <AppFooter />
+      </React.Fragment>
    )
 }
 
-export default Landing;
+export default withRoot(Landing);

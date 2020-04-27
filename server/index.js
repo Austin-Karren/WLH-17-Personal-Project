@@ -5,6 +5,7 @@ const express = require('express'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       authCtrl = require('./controllers/authController'),
       postCtrl = require('./controllers/postController'),
+      emailCtrl = require('./controllers/emailController'),
       junctionCtrl = require('./controllers/junctionController' )
       port = SERVER_PORT,
       app = express();
@@ -68,6 +69,9 @@ app.post('/api/album/photo', junctionCtrl.addAlbumPhoto);
 
 app.delete('/api/collection/album/:id', junctionCtrl.removeCollectionAlbum);
 app.delete('/api/album/photo/:id', junctionCtrl.removeAlbumPhoto);
+
+// nodemailer endpoint
+app.post('/api/email', emailCtrl.email)
 
 // aws endpoint
 app.get('/api/signs3', (req, res) => {

@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Container from '@material-ui/core/Container';
-import Typography from './Custom/Typography';
-import axios from 'axios';
+import Typography from '../Custom/Typography';
+import Axios from 'axios';
 import {withRouter} from 'react-router-dom';
-import AppNavbar from './Views/AppNavbar';
-import AppFooter from './Views/AppFooter';
-import withRoot from './Theme/withRoot';
+import withRoot from '../Theme/withRoot';
 
 const styles = (theme) => ({
   root: {
@@ -90,71 +88,59 @@ const styles = (theme) => ({
 
 const ProductCategories = (props) => {
   const { classes } = props;
-  const [albums, setAlbums] = useState([]);
-  const [idArray, setIdArray] = useState([]);
+  const [collections, setCollection] = useState([]);
 
-useEffect(() => {
-   axios.get(`/api/collection/albums/${props.match.params.id}`)
-   .then(res => {
-      setIdArray(res.data);
-   })
-   .catch(err => console.log(err));
-}, []);
+  useEffect(() => {
+     Axios.get(`/api/collections`)
+     .then(res => {
+      //   console.log(res.data);
+        setCollection(res.data);
+     })
+     .catch(err => console.log(err));
+  }, [])
 
-useEffect(() => {
-   idArray.map(element => {
-      axios.get(`/api/album/${element.album_id}`)
-      .then(res => {
-         setAlbums(albums => [...albums, res.data[0]])
-      })
-   })
-}, [idArray])
-
-  const toAlbum = (id) => {
-    props.history.push(`/album/${id}`)
+  const toCollection = (id) => {
+    props.history.push(`/collection/${id}`)
   }
 
+  console.log(collections);
   return (
-     <React.Fragment>
-        <AppNavbar />
-      <Container className={classes.root} component="section">
-         <Typography variant="h4" marked="center" align="center" component="h2">
-         Albums
-         </Typography>
-         <div className={classes.images}>
-         {albums.map((album) => ( 
-            <ButtonBase
-               onClick={() => toAlbum(album.album_id)}
-               key={album.title}
-               className={classes.imageWrapper}
-               style={{
-               width: '50%',
-               }}
-            >
-               <div
-               className={classes.imageSrc}
-               style={{
-                  backgroundImage: `url(${album.cover_photo})`,
-               }}
-               />
-               <div className={classes.imageBackdrop} />
-               <div className={classes.imageButton}>
-               <Typography
-                  component="h3"
-                  variant="h6"
-                  color="inherit"
-                  className={classes.imageTitle}
-               >
-                  {album.title}
-                  <div className={classes.imageMarked} />
-               </Typography>
-               </div>
-            </ButtonBase>
-         ))}
-         </div>
-      </Container>
-      <AppFooter />
-     </React.Fragment>
+    <Container className={classes.root} component="section">
+      <Typography variant="h4" marked="center" align="center" component="h2">
+        My Work
+      </Typography>
+      <div className={classes.images}>
+        {collections.map((collection) => ( 
+          <ButtonBase
+            onClick={() => toCollection(collection.collection_id)}
+            key={collection.title}
+            className={classes.imageWrapper}
+            style={{
+              width: '50%',
+            }}
+          >
+            <div
+              className={classes.imageSrc}
+              style={{
+                backgroundImage: `url(${collection.featured_photo})`,
+              }}
+            />
+            <div className={classes.imageBackdrop} />
+            <div className={classes.imageButton}>
+              <Typography
+                component="h3"
+                variant="h6"
+                color="inherit"
+                className={classes.imageTitle}
+              >
+                {collection.title}
+                <div className={classes.imageMarked} />
+              </Typography>
+            </div>
+          </ButtonBase>
+        ))}
+      </div>
+    </Container>
   );
 }
 

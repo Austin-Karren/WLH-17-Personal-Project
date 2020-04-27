@@ -7,10 +7,6 @@ const initialState = {
 const GET_COLLECTIONS = 'GET_COLLECTIONS',
       GET_ALBUMS = 'GET_ALBUMS',
       GET_PHOTOS = 'GET_PHOTOS';
-
-const UPDATE_COLLECTIONS = 'UPDATE_COLLECTIONS',
-      UPDATE_ALBUMS = 'UPDATE_ALBUMS',
-      UPDATE_PHOTOS = 'UPDATE_PHOTOS';
    
 export function getCollections() {
    return {
@@ -30,27 +26,6 @@ export function getPhotos() {
    return {
       type: GET_PHOTOS,
       payload: photos
-   }
-}
-
-export function updateCollections(collection) {
-   return {
-      type: UPDATE_COLLECTIONS,
-      payload: collection
-   }
-}
-
-export function updateAlbums(album){
-   return {
-      type: UPDATE_ALBUMS,
-      payload: album
-   }
-}
-
-export function updatePhotos(photo){
-   return {
-      type: UPDATE_PHOTOS,
-      payload: photo
    }
 }
 

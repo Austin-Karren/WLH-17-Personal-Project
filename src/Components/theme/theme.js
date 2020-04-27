@@ -1,17 +1,17 @@
-import {createMultiTheme} from './node_modules/@material-ui/core/styles';
-import {green, gray, red} from './node_modules/@material-ui/core/colors';
+import {createMuiTheme} from '@material-ui/core/styles';
+import {green, grey, red} from '@material-ui/core/colors';
 
-const rawTheme = createMultiTheme({
+const rawTheme = createMuiTheme({
    palette: {
       primary: {
-        light: '#69696a',
+        light: '#f2f2f2',
         main: '#28282a',
         dark: '#1e1e1f',
       },
       secondary: {
-        light: '#fff5f8',
-        main: '#ff3366',
-        dark: '#e62958',
+        light: '#e5e5e6',
+        main: '#ffbf00',
+        dark: '#997300',
       },
       warning: {
         main: '#ffc071',

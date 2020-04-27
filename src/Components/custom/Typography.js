@@ -1,8 +1,8 @@
-import React from './node_modules/react';
+import React from 'react';
 // maybe import propTypes?
-import {withStyles} from './node_modules/@material-ui/core/styles';
-import {capitalize} from './node_modules/@material-ui/core/utils';
-import MuiTypography from './node_modules/@material-ui/core/Typography';
+import {withStyles} from '@material-ui/core/styles';
+import {capitalize} from '@material-ui/core/utils';
+import MuiTypography from '@material-ui/core/Typography';
 
 const styles = (theme) => ({
    markedH2Center: {

@@ -6,7 +6,7 @@ import '../../App.css';
 import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
-import withRoot from '../Custom/withRoot';
+import withRoot from '../Theme/withRoot';
 import {makeStyles} from '@material-ui/core';
 import PhotoGrid from './PhotoGrid';
 import AlbumGrid from './AlbumGrid';

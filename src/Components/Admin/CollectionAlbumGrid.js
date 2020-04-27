@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import '../../App.css';
-import withRoot from '../Custom/withRoot';
+import withRoot from '../Theme/withRoot';
 import Grid from '@material-ui/core/Grid';
 import CollectionAlbum from './CollectionAlbum';
 import {makeStyles} from '@material-ui/core';
