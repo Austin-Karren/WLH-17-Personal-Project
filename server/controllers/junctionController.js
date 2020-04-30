@@ -46,5 +46,12 @@ module.exports = {
       db.album_photos.remove_photo(+id)
       .then(() => res.sendStatus(200))
       .catch(err => res.status(500).send(err));
+   },
+   getAlbumAuthor: (req, res) => {
+      const {id} = req.params;
+      const db = app.get('db');
+      db.album_author.album_author(+id)
+      .then(author => res.status(200).send(author))
+      .catch(err => res.status(500).send(err));
    }
 }

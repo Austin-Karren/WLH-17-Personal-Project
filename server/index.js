@@ -60,6 +60,9 @@ app.put('/api/collection/:id', postCtrl.updateCollection);
 app.put('/api/album/:id', postCtrl.updateAlbum);
 app.put('/api/photo/:id', postCtrl.updatePhoto);
 
+// get the album author
+app.get('/api/album/author/:id', junctionCtrl.getAlbumAuthor);
+
 // junction endpoints
 app.get('/api/collection/albums/:id', junctionCtrl.getCollectionAlbumIds);
 app.get('/api/album/photos/:id', junctionCtrl.getAlbumPhotoIds);
