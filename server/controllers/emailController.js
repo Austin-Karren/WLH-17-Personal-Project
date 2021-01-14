@@ -20,7 +20,7 @@ module.exports = {
             }
          });
          let info = await transporter.sendMail({
-            from: `Kylie England <${EMAIL}>`,
+            from: `Kylie England @ Ky England Photo <${EMAIL}>`,
             to: `${firstName} ${lastName} <${email}>`,
             bcc: `Kylie England <${EMAIL}>`,
             subject: `Thanks for reaching out!`,

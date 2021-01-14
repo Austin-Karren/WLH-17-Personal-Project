@@ -39,7 +39,7 @@ const PhotoGrid = props => {
          axios.get(`/api/photo/${element.photo_id}`)
          .then(res => {
             // photos.push(res.data[0]);
-            setPhotos(photos => [...photos, res.data[0]])
+            setPhotos(photos => [...photos, res.data[0]]);
          })
       })
    }, [IdArray]);

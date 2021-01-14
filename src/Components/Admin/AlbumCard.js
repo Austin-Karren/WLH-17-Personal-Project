@@ -31,7 +31,6 @@ const AlbumCard = props => {
       props.history.push(`edit/album/${props.id}`)
    }
 
-   console.log(albumAuthor);
    return (
       <Card 
          className={classes.root}
@@ -48,11 +47,11 @@ const AlbumCard = props => {
             <Typography gutterBottom variant='h5' component='h2'>
                {props.title}
             </Typography>
-            <Typography gutterBottom variant='subtitle2' component='h3'>
-               {`By ${albumAuthor}`}
-            </Typography>
             <Typography variant='body1' color='textSecondary' component='p'>
                {props.description}
+            </Typography>
+            <Typography gutterBottom variant='subtitle2' component='h3'>
+               {`By ${albumAuthor}`}
             </Typography>
          </CardContent>
       </Card>
